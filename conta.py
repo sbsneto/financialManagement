@@ -7,7 +7,7 @@ class Conta:
 
     def __init__(self, numConta, nomeCliente, saldo, descricao):
         self.numConta = numConta
-        self.nomeCline = nomeCliente
+        self.nomeCliente = nomeCliente
         self.saldo = saldo
         self.descricao = descricao
 
