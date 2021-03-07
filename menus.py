@@ -6,10 +6,11 @@ def cabecalho():
 
 def menu_principal():
     print('\n')
-    print(" 1. Lançar Débitos ou Créditos")
-    print(" 2. Consultar Saldo")
-    print(" 3. Consultar Extrato")
-    print(" 4. Consultar Saldo atual da Conta")
+    print(" 1. Cadastrar uma Conta")
+    print(" 2. Lançar Débitos ou Créditos")
+    print(" 3. Consultar Saldo")
+    print(" 4. Consultar Extrato")
+    print(" 5. Consultar Saldo atual da Conta")
     print("\n 0. Sair\n\n")
 
 
