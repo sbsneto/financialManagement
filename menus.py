@@ -5,11 +5,20 @@ def cabecalho():
 
 
 def menu_principal():
-    print("#" * 10, " 1 Cadastrar Conta: !", "#" * 8)
-    print("#" * 10, " 2 para Cadastrar Debitos ou Lançamentos!", "#" * 10)
-    print("#" * 10, " 3 Consultar Extrato!", "#" * 8)
-    print("#" * 10, " 4 Consultar Saldo atual da Conta!", "#" * 8)
-    print("#" * 10, " 5 para sair do sistema!", "#" * 21)
+    print('\n')
+    print(" 1. Lançar Débitos ou Créditos")
+    print(" 2. Consultar Saldo")
+    print(" 3. Consultar Extrato")
+    print(" 4. Consultar Saldo atual da Conta")
+    print("\n 0. Sair\n\n")
+
+
+def menuLancamento():
+    print(" 1. Debitar")
+    print(" 2. Creditar")
+    print(" 3. Voltar")
+    print('\n')
+    print(" 0. Sair")
 
 
 def menu_secundario():

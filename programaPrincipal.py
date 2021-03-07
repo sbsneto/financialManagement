@@ -1,11 +1,11 @@
-from menus import cabecalho, extratus, menu_principal, menu_secundario
-from tratarErros import leia_int, leia_str, leia_float
+from menus import cabecalho, extratus, menuLancamento, menu_principal, menu_secundario
+from tratarErros import leia_int, leia_str
 from conta import Conta
 from debitoCredito import DebitoCredito
+from limpa_tela import limpa
 
 import time
 import os
-import random
 
 repetir = True
 while repetir == True:
@@ -16,7 +16,7 @@ while repetir == True:
     cabecalho()
     menu_principal()
     op = leia_int('Escolha a opção desejada: ')
-    os.system("cls")
+    limpa()
     if op == 1:
         cabecalho()
         nomeCliente = leia_str("Insira o nome do Cliente: ")
@@ -24,13 +24,13 @@ while repetir == True:
         saldo = float(input("Insira o saldo atual da conta: "))
         contaCliente = Conta(numConta, nomeCliente, saldo, "")
         lançamentos.append(contaCliente)
-        os.system("cls")
+        limpa()
     elif op == 2:
         while True:
             cabecalho()
             menu_secundario()
             op2 = leia_int('Escolha a opção desejada: ')
-            os.system("cls")
+            limpa()
 
             if (op2 == 1):
 
@@ -48,7 +48,7 @@ while repetir == True:
 
                 dividas.append(gasto)
                 extratoCompleto.append(gasto)
-                os.system("cls")
+                limpa()
             elif (op2 == 2):
                 cabecalho()
                 descricao = str(input("Descrição do Lançamentos: "))
@@ -63,9 +63,9 @@ while repetir == True:
 
                 lançamentos.append(credito)
                 extratoCompleto.append(credito)
-                os.system("cls")
+                limpa()
             elif (op2 == 3):
-                os.system("cls")
+                limpa()
                 break
             else:
                 print("ERRO! Opção invalida ! ")
@@ -98,7 +98,7 @@ while repetir == True:
                             lançamentos[i].valor,
                             lançamentos[i].dataOperacao)
             elif(op3 == 4):
-                os.system("cls")
+                limpa()
                 break
             else:
                 print("ERRO! Opção invalida ! ")
