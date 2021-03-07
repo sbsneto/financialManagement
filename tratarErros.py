@@ -18,3 +18,14 @@ def leia_str(valor):  # função para tratamento de erros para inserção de val
             continue
         else:
             return n
+
+
+def leia_float(valor):  # função para tratamento de erros para inserção de valores caracteris
+    while True:
+        try:
+            n = float(input(valor))
+        except (ValueError, TypeError,):
+            print('ERROR! POR FAVOR INSIRA APENAS CARÁTER')
+            continue
+        else:
+            return n

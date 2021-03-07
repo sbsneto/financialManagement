@@ -5,9 +5,11 @@ def cabecalho():
 
 
 def menu_principal():
-    print("#" * 10, " 1 para Cadastrar Debitos ou Lançamentos!", "#" * 10)
-    print("#" * 10, " 2 Consultar Extrato!", "#" * 8)
-    print("#" * 10, " 3 para sair do sistema!", "#" * 21)
+    print("#" * 10, " 1 Cadastrar Conta: !", "#" * 8)
+    print("#" * 10, " 2 para Cadastrar Debitos ou Lançamentos!", "#" * 10)
+    print("#" * 10, " 3 Consultar Extrato!", "#" * 8)
+    print("#" * 10, " 4 Consultar Saldo atual da Conta!", "#" * 8)
+    print("#" * 10, " 5 para sair do sistema!", "#" * 21)
 
 
 def menu_secundario():
@@ -16,10 +18,8 @@ def menu_secundario():
     print('Digite 3 para voltar para o menu principal!')
 
 
-def consultas():
-    print('Digite 1 para Mesas Com Pedidos em Aberto!')
-    print('Digite 2 para Mesas Com Pedidos Pronto P/ Entrega!')
-    print('Digite 3 para Mesas Com Pedidos Entregues!')
-    print('Digite 4 para Mostrar o Status de todos os Pedidos! ')
-    print('Digite 5 para Mostrar os Pedidos já pago ! ')
-    print('Digite 6 para voltar! ')
+def extratus():
+    print('Digite 1 para Consultar Extrato Completo!')
+    print('Digite 2 para Consultar Extrato dos debitos!')
+    print('Digite 3 para Consultar Extrato dos Lançamentos!')
+    print('Digite 4 para voltar ao Menu Principal! ')

@@ -1,35 +1,35 @@
 class Conta:
 
-    numConta: int(13216549879)
-    nomeCliente: str("Sebastião Neto")
+    numConta: int
+    nomeCliente: str
     saldo: float
     descricao: str
 
-    def __init__(self, numConta, nomeCliente, saldo, descricao):
+    def __init__(self, numConta: int, nomeCliente: str, saldo: float, descricao: str):
         self.numConta = numConta
         self.nomeCline = nomeCliente
         self.saldo = saldo
         self.descricao = descricao
 
-    def setNumConta(self, numConta):
+    def setNumConta(self, numConta: int):
         self.numConta = numConta
 
     def getNumConta(self):
         return self.numConta
 
-    def setNomeCliente(self, nomeCliente):
-        self.numConta = nomeCliente
+    def setNomeCliente(self, nomeCliente: str):
+        self.nomeCliente = nomeCliente
 
     def getNomeCliente(self):
         return self.nomeCliente
 
-    def setSaldo(self, saldo):
-        self.numConta = saldo
+    def debito(self, valor: float):
+        self.saldo -= valor
 
-    def getSaldo(self):
-        return self.saldo
+    def credito(self, saldo: float):
+        self.saldo += saldo
 
-    def setDescricao(self, descricao):
+    def setDescricao(self, descricao: str):
         self.descricao = descricao
 
     def getDescricao(self):
