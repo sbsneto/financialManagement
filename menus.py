@@ -8,7 +8,6 @@ def menu_principal():
     print('\n')
     print(" 1. Lançar Débitos ou Créditos")
     print(" 2. Consultar Saldo")
-    #print('\n')
     print("\n 0. Sair\n\n")
 
 def menuLancamento():
