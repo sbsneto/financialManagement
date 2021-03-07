@@ -34,7 +34,8 @@ while True:
                 cabecalho()
                 menu_principal()
             else:
-                print("ERRO! Opção invalida ! ")
+                limpa()
+                cabecalho()
     elif opcaoMenuPrincipal == 2:
         print('Opção 2 selecionada')
     elif opcaoMenuPrincipal == 3:
