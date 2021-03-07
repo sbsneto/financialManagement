@@ -1,20 +1,19 @@
 def cabecalho():
-    print("#" * 52)
-    print("#" * 16, " Financial Manager ", "#" * 16)
-    print("#" * 52)
+    print("#" * 58)
+    print("#" * 18, " Financial Manager ", "#" * 18)
+    print("#" * 58)
 
 
 def menu_principal():
-    print("#" * 10, " 1 para Cadastrar Debito ou Credito!", "#" * 10)
-    print("#" * 10, " 2 para Inserir Credito!", "#" * 5)
-    print("#" * 10, " 3 Consultar Extrato!", "#" * 8)
-    print("#" * 10, " 4 para sair do sistema!", "#" * 21)
+    print("#" * 10, " 1 para Cadastrar Debitos ou Lançamentos!", "#" * 10)
+    print("#" * 10, " 2 Consultar Extrato!", "#" * 8)
+    print("#" * 10, " 3 para sair do sistema!", "#" * 21)
 
 
 def menu_secundario():
     print('Digite 1 para cadastrar Debito!')
-    print('Digite 1 para cadastrar Credito!')
-    print('Digite 2 para voltar para o menu principal!')
+    print('Digite 2 para cadastrar lançamentos!')
+    print('Digite 3 para voltar para o menu principal!')
 
 
 def consultas():

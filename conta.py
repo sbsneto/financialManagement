@@ -1,7 +1,7 @@
 class Conta:
 
-    numConta: int
-    nomeCliente: str
+    numConta: int(13216549879)
+    nomeCliente: str("Sebastião Neto")
     saldo: float
     descricao: str
 
@@ -10,27 +10,27 @@ class Conta:
         self.nomeCline = nomeCliente
         self.saldo = saldo
         self.descricao = descricao
-    
+
     def setNumConta(self, numConta):
-      self.numConta = numConta
+        self.numConta = numConta
 
     def getNumConta(self):
-      return self.numConta
+        return self.numConta
 
     def setNomeCliente(self, nomeCliente):
         self.numConta = nomeCliente
 
     def getNomeCliente(self):
-      return self.nomeCliente
+        return self.nomeCliente
 
     def setSaldo(self, saldo):
         self.numConta = saldo
 
     def getSaldo(self):
-      return self.saldo
+        return self.saldo
 
     def setDescricao(self, descricao):
-      self.descricao = descricao
+        self.descricao = descricao
 
     def getDescricao(self):
-      return self.descricao
+        return self.descricao
