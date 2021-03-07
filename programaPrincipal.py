@@ -36,6 +36,8 @@ while True:
             else:
                 limpa()
                 cabecalho()
+                print("\n ",opcaoMenuSecundario," não está entre as opções.\n")
+                menu_secundario()
     elif opcaoMenuPrincipal == 2:
         print('Opção 2 selecionada')
     elif opcaoMenuPrincipal == 3:
