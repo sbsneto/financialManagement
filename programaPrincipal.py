@@ -9,7 +9,11 @@ while True:
     cabecalho()
     menu_principal()
     op = leia_int('Escolha a opção desejada: ')
-    os.system("cls")
+    # cls é somente Windows, clear para macOS, Linux, BSDs etc.
+    if 'win32' in os.sys.platform:
+        os.system('cls')
+    else:
+        os.system('clear')
     if op == 1:
         while True:
             cabecalho()
