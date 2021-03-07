@@ -19,6 +19,7 @@ while True:
             conta = Conta
             if (opcaoMenuSecundario == 1):
                 cabecalho()
+                print('\n Saldo atual: R$', getSaldo,".\n")
                 descricao = str("Descrição do Debito: ")
                 debito = float("Insira o valor do Debito: ")
 
