@@ -48,7 +48,6 @@ while repetir == True:
 
                 dividas.append(gasto)
                 extratoCompleto.append(gasto)
-
                 os.system("cls")
             elif (op2 == 2):
                 cabecalho()
