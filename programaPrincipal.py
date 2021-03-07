@@ -2,18 +2,14 @@ from menus import cabecalho, menu_secundario, menu_principal, consultas
 from tratarErros import leia_int, leia_str
 from conta import Conta
 import time
-import os
+from limpa_tela import limpa
 
 while True:
     financeiro = []
     cabecalho()
     menu_principal()
     op = leia_int('Escolha a opção desejada: ')
-    # cls é somente Windows, clear para macOS, Linux, BSDs etc.
-    if 'win32' in os.sys.platform:
-        os.system('cls')
-    else:
-        os.system('clear')
+    limpa()
     if op == 1:
         while True:
             cabecalho()
@@ -30,12 +26,10 @@ while True:
                 print(conta.getDescricao(), conta.getSaldo())
                 # financeiro.append(conta)
                 # print(financeiro)
-
-                # os.system("cls")
             elif (op2 == 2):
-                os.system("cls")
+                limpa()
             elif (op2 == 3):
-                os.system("cls")
+                limpa()
                 break
             else:
                 print("ERRO! Opção invalida ! ")
