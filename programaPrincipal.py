@@ -15,28 +15,29 @@ extratoCompleto = []
 
 repetir = True
 while repetir == True:
-
+    limpa()
     cabecalho()
     menu_principal()
     op = leia_int('Escolha a opção desejada: ')
     limpa()
     if op == 1:
         cabecalho()
+        print(" ")
         nomeCliente = leia_str("Insira o nome do Cliente: ")
         numConta = leia_int("Insira o número da conta: ")
-        saldo = float(input("Insira o saldo atual da conta: "))
+        saldo = float(input("Insira o saldo atual da conta: R$"))
         contaCliente = Conta(numConta, nomeCliente, saldo, "")
         limpa()
-        print("Conta cadastrado com sucesso...")
+        print("Conta cadastrada com sucesso...")
         time.sleep(1)
         limpa()
     elif op == 2:
         while True:
             cabecalho()
+            print(" ")
             menu_secundario()
             op2 = leia_int('Escolha a opção desejada: ')
             limpa()
-
             if (op2 == 1):
                 descricao = str(input("Descrição do Debito: "))
                 tipo = str("-")
@@ -82,9 +83,13 @@ while repetir == True:
                 print("ERRO! Opção inválida ! ")
     elif op == 3:
         while True:
+            cabecalho()
+            print(" ")
             extratus()
             op3 = leia_int('Escolha a opção desejada: ')
             if(op3 == 1):
+                limpa()
+                cabecalho()
                 i = 0
                 while i < len(extratoCompleto):
                     print(
@@ -129,6 +134,9 @@ while repetir == True:
                 print("ERRO! Opção inválida ! ")
     elif op == 4:
         while True:
+            limpa()
+            cabecalho()
+            print(" ")
             editarExcluir()
             op3 = leia_int('Escolha a opção desejada: ')
             if(op3 == 1):
@@ -186,10 +194,15 @@ while repetir == True:
             else:
                 print("ERRO! Opção inválida ! ")
     elif op == 5:
-        print("O saldo atual é de: ", contaCliente.getSaldo())
-        # faz a execução do codigo parar ate ser preciosado qualquer tecla
+        limpa()
+        cabecalho()
+        print(" ")
+        print("O saldo atual é de: R$", contaCliente.getSaldo())
+        print("Pressione qualquer tecla para continuar. ")
+        # faz a execução do codigo parar até ser pressionada qualquer tecla
         a = input("")
+        limpa()
     elif op == 0:
         break
     else:
-        print("Erro olhar um valor entre 1 e 4")
+        print("Erro: escolha um valor entre 1 e 4")
