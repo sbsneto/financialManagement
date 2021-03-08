@@ -70,7 +70,7 @@ while repetir == True:
                 limpa()
                 break
             else:
-                print("ERRO! Opção invalida ! ")
+                print("ERRO! Opção inválida ! ")
     elif op == 3:
         cabecalho()
         extratus()
@@ -103,7 +103,7 @@ while repetir == True:
                 limpa()
                 break
             else:
-                print("ERRO! Opção invalida ! ")
+                print("ERRO! Opção inválida ! ")
     elif op == 4:
         repetir = False
     elif op == 5:

@@ -6,6 +6,8 @@ class Cofre:
         self.dataHistorico = dataHistorico
         historico = []
         dataHistorico = []
+    def getSaldo(self, saldo):
+        
     
 class Operacao:
     def debitaSaldo(self, valor, saldo, historico, data, dataHistorico):
@@ -22,6 +24,7 @@ class Operacao:
 
 class Correcao:
     def corrigeEntrada(self, historico, dataHistorico):
-        # Método para apagar a última operação
+        # Método para apagar a última operação do histórico
         dataHistorico.pop()
         historico.pop()
+
