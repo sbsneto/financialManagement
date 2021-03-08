@@ -10,7 +10,7 @@ def menu_principal():
     print(" 2. Lançar Débitos ou Créditos")
     print(" 3. Consultar Extrato")
     print(" 4. Editar ou Excluir lançamento")
-    print(" 5. Consultar Saldo atual da Conta")
+    print(" 5. Consultar Saldo Atual da Conta")
     print("\n 0. Sair\n\n")
 
 
