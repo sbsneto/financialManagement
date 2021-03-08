@@ -28,7 +28,7 @@ def menu_secundario():
     print('Digite 3 para voltar para o menu principal!')
 
 
-def extratus():
+def extratos():
     print('Digite 1 para Consultar Extrato Completo!')
     print('Digite 2 para Consultar Extrato dos debitos!')
     print('Digite 3 para Consultar Extrato dos Lançamentos!')

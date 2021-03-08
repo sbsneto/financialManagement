@@ -1,4 +1,4 @@
-from menus import cabecalho, extratus, menuLancamento, menu_principal, menu_secundario
+from menus import cabecalho, extratos, menuLancamento, menu_principal, menu_secundario
 from tratarErros import leia_int, leia_str
 from conta import Conta
 from debitoCredito import DebitoCredito
@@ -73,7 +73,7 @@ while repetir == True:
                 print("ERRO! Opção inválida ! ")
     elif op == 3:
         cabecalho()
-        extratus()
+        extratos()
         op3 = leia_int('Escolha a opção desejada: ')
         while True:
             if(op3 == 1):
