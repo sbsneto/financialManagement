@@ -96,6 +96,7 @@ while repetir == True:
                     i += 1
                 # faz a execução do codigo parar ate ser preciosado qualquer tecla
                 a = input("")
+                limpa()
             elif(op3 == 2):
                 i = 0
                 while i < len(extratoCompleto):
@@ -109,6 +110,7 @@ while repetir == True:
                     i += 1
                 # faz a execução do codigo parar ate ser preciosado qualquer tecla
                 a = input("")
+                limpa()
             elif(op3 == 3):
                 i = 0
                 while i < len(extratoCompleto):
@@ -122,6 +124,7 @@ while repetir == True:
                     i += 1
                 # faz a execução do codigo parar ate ser preciosado qualquer tecla
                 a = input("")
+                limpa()
             elif(op3 == 0):
                 limpa()
                 break

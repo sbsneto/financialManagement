@@ -1,6 +1,6 @@
 def cabecalho():
     print("#" * 58)
-    print("#" * 18, " Financial Manager ", "#" * 18)
+    print("#" * 18, " Financial Manager ", "#" * 19)
     print("#" * 58)
 
 
