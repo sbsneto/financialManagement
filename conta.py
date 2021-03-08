@@ -29,6 +29,9 @@ class Conta:
     def credito(self, saldo: float):
         self.saldo += saldo
 
+    def getSaldo(self):
+        return self.saldo
+
     def setDescricao(self, descricao: str):
         self.descricao = descricao
 

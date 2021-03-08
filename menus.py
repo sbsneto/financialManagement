@@ -9,7 +9,7 @@ def menu_principal():
     print(" 1. Cadastrar uma Conta")
     print(" 2. Lançar Débitos ou Créditos")
     print(" 3. Consultar Extrato")
-    print(" 4. Consultar Saldo")
+    print(" 4. Editar ou Excluir lançamento")
     print(" 5. Consultar Saldo atual da Conta")
     print("\n 0. Sair\n\n")
 
@@ -23,13 +23,22 @@ def menuLancamento():
 
 
 def menu_secundario():
-    print('Digite 1 para cadastrar Debito!')
-    print('Digite 2 para cadastrar lançamentos!')
-    print('Digite 3 para voltar para o menu principal!')
+    print(" 1. Cadastrar debito")
+    print(" 2. Cadastrar credito")
+    print("\n")
+    print(" 0. Sair")
 
 
 def extratus():
-    print('Digite 1 para Consultar Extrato Completo!')
-    print('Digite 2 para Consultar Extrato dos debitos!')
-    print('Digite 3 para Consultar Extrato dos Lançamentos!')
-    print('Digite 4 para voltar ao Menu Principal! ')
+    print(" 1. Extrato Completo")
+    print(" 2. Extrato dos debitos")
+    print(" 3. Extrato dos creditos")
+    print("\n")
+    print(" 0. Sair")
+
+
+def editarExcluir():
+    print(" 1. Editar um lançamento")
+    print(" 2. Excluir um lançamento")
+    print("\n")
+    print(" 0. Sair")
