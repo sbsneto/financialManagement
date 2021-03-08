@@ -24,6 +24,8 @@ while repetir == True:
         saldo = float(input("Insira o saldo atual da conta: "))
         contaCliente = Conta(numConta, nomeCliente, saldo, "")
         lançamentos.append(contaCliente)
+        novaConta = DebitoCredito(saldo, "+", "NOVA CONTA", "")
+        extratoCompleto.append(novaConta)
         limpa()
     elif op == 2:
         while True:
@@ -75,28 +77,28 @@ while repetir == True:
         op3 = leia_int('Escolha a opção desejada: ')
         while True:
             if(op3 == 1):
-                for i in extratoCompleto:
+                for a in range(len(extratoCompleto)):
                     print(
-                        i.tipo,
-                        i.descricao,
-                        i.valor,
-                        i.dataOperacao)
+                        extratoCompleto[a].tipo,
+                        extratoCompleto[a].descricao,
+                        extratoCompleto[a].valor,
+                        extratoCompleto[a].dataOperacao)
             elif(op3 == 2):
-                for i in (len(dividas)):
-                    if(i.tipo == "-"):
+                for b in range(len(extratoCompleto)):
+                    if(dividas[b].tipo == "-"):
                         print(
-                            i.tipo,
-                            i.descricao,
-                            i.valor,
-                            i.dataOperacao)
+                            dividas[b].tipo,
+                            dividas[b].descricao,
+                            dividas[b].valor,
+                            dividas[b].dataOperacao)
             elif(op3 == 3):
-                for i in (len(lançamentos)):
-                    if(i.tipo == "-"):
+                for c in range(len(extratoCompleto)):
+                    if(lançamentos[c].tipo == "-"):
                         print(
-                            lançamentos[i].tipo,
-                            lançamentos[i].descricao,
-                            lançamentos[i].valor,
-                            lançamentos[i].dataOperacao)
+                            lançamentos[c].tipo,
+                            lançamentos[c].descricao,
+                            lançamentos[c].valor,
+                            lançamentos[c].dataOperacao)
             elif(op3 == 4):
                 limpa()
                 break
