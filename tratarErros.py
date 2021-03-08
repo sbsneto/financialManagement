@@ -14,7 +14,7 @@ def leia_str(valor):  # função para tratamento de erros para inserção de val
         try:
             n = str(input(valor))
         except (ValueError, TypeError,):
-            print('ERROR! POR FAVOR INSIRA APENAS CARÁCTER')
+            print('ERROR! POR FAVOR INSIRA APENAS CARÁCTERE')
             continue
         else:
             return n
@@ -25,7 +25,7 @@ def leia_float(valor):  # função para tratamento de erros para inserção de v
         try:
             n = float(input(valor))
         except (ValueError, TypeError,):
-            print('ERROR! POR FAVOR INSIRA APENAS CARACTER')
+            print('ERROR! POR FAVOR INSIRA APENAS CARÁCTERE')
             continue
         else:
             return n
