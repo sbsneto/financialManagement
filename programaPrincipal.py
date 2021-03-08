@@ -1,4 +1,4 @@
-from menus import cabecalho, menuLancamento, menu_principal, menu_secundario, extratus, editarExcluir
+from menus import cabecalho, menuLancamento, menu_principal, menu_secundario, extratos, editarExcluir
 from tratarErros import leia_int, leia_str
 from conta import Conta
 from debitoCredito import DebitoCredito
@@ -85,7 +85,7 @@ while repetir == True:
         while True:
             cabecalho()
             print(" ")
-            extratus()
+            extratos()
             op3 = leia_int('Escolha a opção desejada: ')
             if(op3 == 1):
                 limpa()

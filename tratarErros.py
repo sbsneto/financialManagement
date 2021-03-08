@@ -9,7 +9,7 @@ def leia_int(valor):  # função para tratamento de erros para inserção de val
             return n
 
 
-def leia_str(valor):  # função para tratamento de erros para inserção de valores caracteris
+def leia_str(valor):  # função para tratamento de erros para inserção de valores caracteres
     while True:
         try:
             n = str(input(valor))
@@ -20,7 +20,7 @@ def leia_str(valor):  # função para tratamento de erros para inserção de val
             return n
 
 
-def leia_float(valor):  # função para tratamento de erros para inserção de valores caracteris
+def leia_float(valor):  # função para tratamento de erros para inserção de valores caracteres
     while True:
         try:
             n = float(input(valor))

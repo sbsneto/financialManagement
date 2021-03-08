@@ -23,16 +23,16 @@ def menuLancamento():
 
 
 def menu_secundario():
-    print(" 1. Cadastrar debito")
-    print(" 2. Cadastrar credito")
+    print(" 1. Cadastrar Débito")
+    print(" 2. Cadastrar Crédito")
     print("\n")
     print(" 0. Sair")
 
 
-def extratus():
+def extratos():
     print(" 1. Extrato Completo")
-    print(" 2. Extrato dos debitos")
-    print(" 3. Extrato dos creditos")
+    print(" 2. Extrato dos Débitos")
+    print(" 3. Extrato dos Créditos")
     print("\n")
     print(" 0. Sair")
 
