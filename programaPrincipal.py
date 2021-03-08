@@ -1,4 +1,4 @@
-from menus import cabecalho, extratos, menuLancamento, menu_principal, menu_secundario
+from menus import cabecalho, menuLancamento, menu_principal, menu_secundario, extratus
 from tratarErros import leia_int, leia_str
 from conta import Conta
 from debitoCredito import DebitoCredito
@@ -7,12 +7,13 @@ from limpa_tela import limpa
 import time
 import os
 
+dividas = []
+lançamentos = []
+extratoCompleto = []
+
 repetir = True
 while repetir == True:
     contaCliente: Conta
-    dividas = []
-    lançamentos = []
-    extratoCompleto = []
     cabecalho()
     menu_principal()
     op = leia_int('Escolha a opção desejada: ')
@@ -24,8 +25,6 @@ while repetir == True:
         saldo = float(input("Insira o saldo atual da conta: "))
         contaCliente = Conta(numConta, nomeCliente, saldo, "")
         lançamentos.append(contaCliente)
-        novaConta = DebitoCredito(saldo, "+", "NOVA CONTA", "")
-        extratoCompleto.append(novaConta)
         limpa()
     elif op == 2:
         while True:
@@ -35,24 +34,21 @@ while repetir == True:
             limpa()
 
             if (op2 == 1):
-
-                cabecalho()
                 descricao = str(input("Descrição do Debito: "))
                 tipo = str("-")
                 valor = float(input("Insira o valor do Debito: "))
                 dataOp = str(input("Insira a data e a Hora da Operação: "))
+
                 contaCliente.debito(valor)
 
                 gasto = DebitoCredito(
                     valor, tipo.upper(), descricao.upper(), dataOp.upper())
 
-                print(contaCliente.saldo)
-
                 dividas.append(gasto)
                 extratoCompleto.append(gasto)
+                print(len(extratoCompleto))
                 limpa()
             elif (op2 == 2):
-                cabecalho()
                 descricao = str(input("Descrição do Lançamentos: "))
                 tipo = str("+")
                 valor = float(input("Insira o valor do Lançamento: "))
@@ -65,6 +61,7 @@ while repetir == True:
 
                 lançamentos.append(credito)
                 extratoCompleto.append(credito)
+                print(len(extratoCompleto))
                 limpa()
             elif (op2 == 3):
                 limpa()
@@ -72,33 +69,42 @@ while repetir == True:
             else:
                 print("ERRO! Opção inválida ! ")
     elif op == 3:
-        cabecalho()
-        extratos()
-        op3 = leia_int('Escolha a opção desejada: ')
         while True:
+            extratus()
+            op3 = leia_int('Escolha a opção desejada: ')
             if(op3 == 1):
-                for a in range(len(extratoCompleto)):
+                i = 0
+                print(len(extratoCompleto))
+                while i < len(extratoCompleto):
                     print(
-                        extratoCompleto[a].tipo,
-                        extratoCompleto[a].descricao,
-                        extratoCompleto[a].valor,
-                        extratoCompleto[a].dataOperacao)
+                        extratoCompleto[i].tipo,
+                        extratoCompleto[i].descricao,
+                        extratoCompleto[i].valor,
+                        extratoCompleto[i].dataOperacao)
+                    i += 1
+                # break
             elif(op3 == 2):
-                for b in range(len(extratoCompleto)):
-                    if(dividas[b].tipo == "-"):
-                        print(
-                            dividas[b].tipo,
-                            dividas[b].descricao,
-                            dividas[b].valor,
-                            dividas[b].dataOperacao)
+                i = 0
+                len(dividas)
+                while i < len(dividas):
+                    print(
+                        dividas[i].tipo,
+                        dividas[i].descricao,
+                        dividas[i].valor,
+                        dividas[i].dataOperacao)
+                    i += 1
+                # break
             elif(op3 == 3):
-                for c in range(len(extratoCompleto)):
-                    if(lançamentos[c].tipo == "-"):
-                        print(
-                            lançamentos[c].tipo,
-                            lançamentos[c].descricao,
-                            lançamentos[c].valor,
-                            lançamentos[c].dataOperacao)
+                i = 0
+                print(len(lançamentos))
+                while i < len(lançamentos):
+                    print(
+                        lançamentos[i].tipo,
+                        lançamentos[i].descricao,
+                        lançamentos[i].valor,
+                        lançamentos[i].dataOperacao)
+                    i += 1
+                # break
             elif(op3 == 4):
                 limpa()
                 break

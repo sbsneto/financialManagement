@@ -8,8 +8,8 @@ def menu_principal():
     print('\n')
     print(" 1. Cadastrar uma Conta")
     print(" 2. Lançar Débitos ou Créditos")
-    print(" 3. Consultar Saldo")
-    print(" 4. Consultar Extrato")
+    print(" 3. Consultar Extrato")
+    print(" 4. Consultar Saldo")
     print(" 5. Consultar Saldo atual da Conta")
     print("\n 0. Sair\n\n")
 
@@ -28,7 +28,7 @@ def menu_secundario():
     print('Digite 3 para voltar para o menu principal!')
 
 
-def extratos():
+def extratus():
     print('Digite 1 para Consultar Extrato Completo!')
     print('Digite 2 para Consultar Extrato dos debitos!')
     print('Digite 3 para Consultar Extrato dos Lançamentos!')
