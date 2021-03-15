@@ -33,8 +33,16 @@ while True:
         numConta = leia_int("Insira o número da conta: ")
         saldo = float(input("Insira o saldo atual da conta: R$"))
 
+        dateTime = time.strftime(
+            '%Y-%m-%d', time.localtime())
+
+        idTransacao = random.randint(0, 9999)
+
         contaCliente = Conta(numConta, nomeCliente, saldo, "Cadastro Conta")
-        contas.append(contaCliente)
+        gasto = DebitoCredito(idTransacao,
+                              saldo, "+", "CADASTRO CONTA", dateTime.upper())
+
+        extratoCompleto.append(gasto)
 
         idTransacao = random.randint(0, 9999)
         if(len(logs) > 6):
