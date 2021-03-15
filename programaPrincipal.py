@@ -70,7 +70,7 @@ while True:
 
                 descricao = str(input("Descrição do Debito: "))
                 tipo = str("-")
-                valor = float(input("Insira o valor do Debito: "))
+                valor = float(input("Insira o valor do Debito: R$"))
                 dataOp = str(input("Insira a data: "))
 
                 idTransacao = random.randint(0, 9999)
@@ -81,6 +81,24 @@ while True:
                                       valor, tipo.upper(), descricao.upper(), dataOp.upper())
 
                 extratoCompleto.append(gasto)
+
+                if len(contas) > 1:
+                    i = 0
+                    while i < len(contas):
+                        print(
+                            contas[i].numConta,
+                            contas[i].nomeCliente)
+                        i += 1
+                    idEditar = leia_int('Insira o ID da transação: ')
+                    j = 0
+                    while j < len(extratoCompleto):
+                        if(extratoCompleto[j].idTransacao == idEditar):
+                            extratoCompleto[j].descricao = str(
+                                input("Nova descrição: "))
+                            extratoCompleto[j].valor = float(
+                                input("Insira o novo valor: "))
+                            extratoCompleto[j].dataOperacao = str(
+                                input("Insira a nova data: "))
 
                 if(len(logs) > 6):
                     logs.pop(0)
@@ -107,7 +125,7 @@ while True:
 
                 descricao = str(input("Descrição do credito: "))
                 tipo = str("+")
-                valor = float(input("Insira o valor do credito: "))
+                valor = float(input("Insira o valor do credito: R$"))
                 dataOp = str(input("Insira a data: "))
 
                 idTransacao = random.randint(0, 9999)
