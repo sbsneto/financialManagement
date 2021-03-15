@@ -1,48 +1,78 @@
-from menus import cabecalho, menuLancamento, menu_principal, menu_secundario, extratus, editarExcluir
+import os
+import time
+import random
+from menus import cabecalho, menuLancamento, menu_principal, menu_secundario, extratos, editarExcluir
 from tratarErros import leia_int, leia_str
 from conta import Conta
 from debitoCredito import DebitoCredito
 from limpa_tela import limpa
-import random
+from log import Log
 
-import time
-import os
 
 contaCliente: Conta
-dividas = []
-lançamentos = []
+log: Log
+logs = []
 extratoCompleto = []
+contas = []
 
-repetir = True
-while repetir == True:
 
+while True:
+
+    limpa()
     cabecalho()
     menu_principal()
     op = leia_int('Escolha a opção desejada: ')
     limpa()
+
     if op == 1:
+
         cabecalho()
+        print(" ")
+
         nomeCliente = leia_str("Insira o nome do Cliente: ")
         numConta = leia_int("Insira o número da conta: ")
-        saldo = float(input("Insira o saldo atual da conta: "))
-        contaCliente = Conta(numConta, nomeCliente, saldo, "")
+        saldo = float(input("Insira o saldo atual da conta: R$"))
+
+        contaCliente = Conta(numConta, nomeCliente, saldo, "Cadastro Conta")
+        contas.append(contaCliente)
+
+        idTransacao = random.randint(0, 9999)
+        if(len(logs) > 6):
+            logs.pop(0)
+            dateTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+            tipo = "CADASTRO DE CONTA"
+            id = idTransacao
+            log = Log(dateTime, tipo, id)
+            logs.append(log)
+        else:
+            dateTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime())
+            tipo = "CADASTRO DE CONTA"
+            id = idTransacao
+            log = Log(dateTime, tipo, id)
+            logs.append(log)
+
         limpa()
-        print("Conta cadastrado com sucesso...")
+        print("Conta cadastrada com sucesso...")
         time.sleep(1)
         limpa()
+
     elif op == 2:
+
         while True:
+
             cabecalho()
+            print(" ")
             menu_secundario()
             op2 = leia_int('Escolha a opção desejada: ')
             limpa()
 
             if (op2 == 1):
+
                 descricao = str(input("Descrição do Debito: "))
                 tipo = str("-")
                 valor = float(input("Insira o valor do Debito: "))
                 dataOp = str(input("Insira a data: "))
-                # dataOp += " as " + str(input("Insira a hora: "))
+
                 idTransacao = random.randint(0, 9999)
 
                 contaCliente.debito(valor)
@@ -50,18 +80,36 @@ while repetir == True:
                 gasto = DebitoCredito(idTransacao,
                                       valor, tipo.upper(), descricao.upper(), dataOp.upper())
 
-                dividas.append(gasto)
                 extratoCompleto.append(gasto)
+
+                if(len(logs) > 6):
+                    logs.pop(0)
+                    dateTime = time.strftime(
+                        '%Y-%m-%d %H:%M:%S', time.localtime())
+                    tipo = "CADASTRO DE DEBITO"
+                    id = idTransacao
+                    log = Log(dateTime, tipo, id)
+                    logs.append(log)
+                else:
+                    dateTime = time.strftime(
+                        '%Y-%m-%d %H:%M:%S', time.localtime())
+                    tipo = "CADASTRO DE DEBITO"
+                    id = idTransacao
+                    log = Log(dateTime, tipo, id)
+                    logs.append(log)
+
                 limpa()
                 print("Debito cadastrado com sucesso...")
                 time.sleep(1)
                 limpa()
+
             elif (op2 == 2):
+
                 descricao = str(input("Descrição do credito: "))
                 tipo = str("+")
                 valor = float(input("Insira o valor do credito: "))
                 dataOp = str(input("Insira a data: "))
-                # dataOp += " as " + str(input("Insira a hora: "))
+
                 idTransacao = random.randint(0, 9999)
 
                 contaCliente.credito(valor)
@@ -69,22 +117,44 @@ while repetir == True:
                 credito = DebitoCredito(idTransacao,
                                         valor, tipo.upper(), descricao.upper(), dataOp.upper())
 
-                lançamentos.append(credito)
                 extratoCompleto.append(credito)
+
+                if(len(logs) > 6):
+                    logs.pop(0)
+                    dateTime = time.strftime(
+                        '%Y-%m-%d %H:%M:%S', time.localtime())
+                    tipo = "CADASTRO DE DEBITO"
+                    id = idTransacao
+                    log = Log(dateTime, tipo, id)
+                    logs.append(log)
+                else:
+                    dateTime = time.strftime(
+                        '%Y-%m-%d %H:%M:%S', time.localtime())
+                    tipo = "CADASTRO DE DEBITO"
+                    id = idTransacao
+                    log = Log(dateTime, tipo, id)
+                    logs.append(log)
+
                 limpa()
                 print("Credito cadastrado com sucesso...")
                 time.sleep(1)
                 limpa()
+
             elif (op2 == 0):
                 limpa()
                 break
             else:
                 print("ERRO! Opção inválida ! ")
     elif op == 3:
+
         while True:
-            extratus()
+            cabecalho()
+            print(" ")
+            extratos()
             op3 = leia_int('Escolha a opção desejada: ')
             if(op3 == 1):
+                limpa()
+                cabecalho()
                 i = 0
                 while i < len(extratoCompleto):
                     print(
@@ -132,6 +202,9 @@ while repetir == True:
                 print("ERRO! Opção inválida ! ")
     elif op == 4:
         while True:
+            limpa()
+            cabecalho()
+            print(" ")
             editarExcluir()
             op3 = leia_int('Escolha a opção desejada: ')
             if(op3 == 1):
@@ -154,9 +227,23 @@ while repetir == True:
                             input("Insira o novo valor: "))
                         extratoCompleto[j].dataOperacao = str(
                             input("Insira a nova data: "))
-                        limpa()
-                        print("Lançamento atualizada com sucesso...")
-                        # faz a execução do codigo parar por alguns segundos
+
+                        if(len(logs) > 6):
+                            logs.pop(0)
+                            dateTime = time.strftime(
+                                '%Y-%m-%d %H:%M:%S', time.localtime())
+                            tipo = "EDIÇÃO DE LANÇAMENTO"
+                            id = idTransacao
+                            log = Log(dateTime, tipo, id)
+                            logs.append(log)
+                        else:
+                            dateTime = time.strftime(
+                                '%Y-%m-%d %H:%M:%S', time.localtime())
+                            tipo = "EDIÇÃO DE LANÇAMENTO"
+                            id = extratoCompleto[j].idTransacao
+                            log = Log(dateTime, tipo, id)
+                            logs.append(log)
+
                         time.sleep(1)
                         limpa()
                     j += 1
@@ -174,6 +261,23 @@ while repetir == True:
                 idExcluir = leia_int('Insira o ID da transação: ')
                 while j < len(extratoCompleto):
                     if(extratoCompleto[j].idTransacao == idExcluir):
+
+                        if(len(logs) == 6):
+                            logs.pop(0)
+                            dateTime = time.strftime(
+                                '%Y-%m-%d %H:%M:%S', time.localtime())
+                            tipo = "EXCLUSÃO DE LANÇAMENTO"
+                            id = extratoCompleto[j].idTransacao
+                            log = Log(dateTime, tipo, id)
+                            logs.append(log)
+                        else:
+                            dateTime = time.strftime(
+                                '%Y-%m-%d %H:%M:%S', time.localtime())
+                            tipo = "EXCLUSÃO DE LANÇAMENTO"
+                            id = extratoCompleto[j].idTransacao
+                            log = Log(dateTime, tipo, id)
+                            logs.append(log)
+
                         extratoCompleto.pop(i - 1)
                         limpa()
                         print("Lançamento excluido com sucesso...")
@@ -189,10 +293,29 @@ while repetir == True:
             else:
                 print("ERRO! Opção inválida ! ")
     elif op == 5:
-        print("O saldo atual é de: ", contaCliente.getSaldo())
-        # faz a execução do codigo parar ate ser preciosado qualquer tecla
+        limpa()
+        cabecalho()
+        print(" ")
+        print("O saldo atual é de: R$", contaCliente.getSaldo())
+        print("Pressione qualquer tecla para continuar. ")
+        # faz a execução do codigo parar até ser pressionada qualquer tecla
         a = input("")
+        limpa()
+    elif op == 6:
+        limpa()
+        cabecalho()
+        print(" ")
+        i = 0
+        while i < len(logs):
+            print(
+                logs[i].dateTime,
+                logs[i].tipo,
+                logs[i].id
+            )
+            i += 1
+        a = input("")
+        limpa()
     elif op == 0:
         break
     else:
-        print("Erro olhar um valor entre 1 e 4")
+        print("Erro: escolha um valor entre 1 e 4")

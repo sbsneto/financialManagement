@@ -1,6 +1,6 @@
 def cabecalho():
     print("#" * 58)
-    print("#" * 18, " Financial Manager ", "#" * 19)
+    print("#" * 17, " Financial Management ", "#" * 17)
     print("#" * 58)
 
 
@@ -10,7 +10,8 @@ def menu_principal():
     print(" 2. Lançar Débitos ou Créditos")
     print(" 3. Consultar Extrato")
     print(" 4. Editar ou Excluir lançamento")
-    print(" 5. Consultar Saldo atual da Conta")
+    print(" 5. Consultar Saldo Atual da Conta")
+    print(" 6. logs")
     print("\n 0. Sair\n\n")
 
 
@@ -23,16 +24,16 @@ def menuLancamento():
 
 
 def menu_secundario():
-    print(" 1. Cadastrar debito")
-    print(" 2. Cadastrar credito")
+    print(" 1. Cadastrar Débito")
+    print(" 2. Cadastrar Crédito")
     print("\n")
     print(" 0. Sair")
 
 
-def extratus():
+def extratos():
     print(" 1. Extrato Completo")
-    print(" 2. Extrato dos debitos")
-    print(" 3. Extrato dos creditos")
+    print(" 2. Extrato dos Débitos")
+    print(" 3. Extrato dos Créditos")
     print("\n")
     print(" 0. Sair")
 
