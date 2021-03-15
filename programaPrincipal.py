@@ -104,28 +104,28 @@ while True:
                     logs.pop(0)
                     dateTime = time.strftime(
                         '%Y-%m-%d %H:%M:%S', time.localtime())
-                    tipo = "CADASTRO DE DEBITO"
+                    tipo = "CADASTRO DE DÉBITO"
                     id = idTransacao
                     log = Log(dateTime, tipo, id)
                     logs.append(log)
                 else:
                     dateTime = time.strftime(
                         '%Y-%m-%d %H:%M:%S', time.localtime())
-                    tipo = "CADASTRO DE DEBITO"
+                    tipo = "CADASTRO DE DÉBITO"
                     id = idTransacao
                     log = Log(dateTime, tipo, id)
                     logs.append(log)
 
                 limpa()
-                print("Debito cadastrado com sucesso...")
+                print("Débito cadastrado com sucesso...")
                 time.sleep(1)
                 limpa()
 
             elif (op2 == 2):
 
-                descricao = str(input("Descrição do credito: "))
+                descricao = str(input("Descrição do crédito: "))
                 tipo = str("+")
-                valor = float(input("Insira o valor do credito: R$"))
+                valor = float(input("Insira o valor do crédito: R$"))
                 dataOp = str(input("Insira a data: "))
 
                 idTransacao = random.randint(0, 9999)
@@ -141,20 +141,20 @@ while True:
                     logs.pop(0)
                     dateTime = time.strftime(
                         '%Y-%m-%d %H:%M:%S', time.localtime())
-                    tipo = "CADASTRO DE DEBITO"
+                    tipo = "CADASTRO DE DÉBITO"
                     id = idTransacao
                     log = Log(dateTime, tipo, id)
                     logs.append(log)
                 else:
                     dateTime = time.strftime(
                         '%Y-%m-%d %H:%M:%S', time.localtime())
-                    tipo = "CADASTRO DE DEBITO"
+                    tipo = "CADASTRO DE DÉBITO"
                     id = idTransacao
                     log = Log(dateTime, tipo, id)
                     logs.append(log)
 
                 limpa()
-                print("Credito cadastrado com sucesso...")
+                print("Crédito cadastrado com sucesso...")
                 time.sleep(1)
                 limpa()
 
@@ -182,7 +182,7 @@ while True:
                         extratoCompleto[i].valor,
                         extratoCompleto[i].dataOperacao)
                     i += 1
-                # faz a execução do codigo parar ate ser preciosado qualquer tecla
+                # faz a execução do código parar até ser pressionada qualquer tecla
                 a = input("")
                 limpa()
             elif(op3 == 2):
@@ -196,7 +196,7 @@ while True:
                             extratoCompleto[i].valor,
                             extratoCompleto[i].dataOperacao)
                     i += 1
-                # faz a execução do codigo parar ate ser preciosado qualquer tecla
+                # faz a execução do código parar até ser pressionada qualquer tecla
                 a = input("")
                 limpa()
             elif(op3 == 3):
@@ -210,7 +210,7 @@ while True:
                             extratoCompleto[i].valor,
                             extratoCompleto[i].dataOperacao)
                     i += 1
-                # faz a execução do codigo parar ate ser preciosado qualquer tecla
+                # faz a execução do código parar ate ser pressionada qualquer tecla
                 a = input("")
                 limpa()
             elif(op3 == 0):
