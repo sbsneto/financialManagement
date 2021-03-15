@@ -21,13 +21,14 @@ def menuLancamento():
     print(" 3. Voltar")
     print('\n')
     print(" 0. Sair")
+    print(" ")
 
 
 def menu_secundario():
     print(" 1. Cadastrar Débito")
     print(" 2. Cadastrar Crédito")
     print("\n")
-    print(" 0. Sair")
+    print(" 0. Voltar")
 
 
 def extratos():
@@ -35,11 +36,13 @@ def extratos():
     print(" 2. Extrato dos Débitos")
     print(" 3. Extrato dos Créditos")
     print("\n")
-    print(" 0. Sair")
+    print(" 0. Voltar")
+    print(" ")
 
 
 def editarExcluir():
     print(" 1. Editar um lançamento")
     print(" 2. Excluir um lançamento")
     print("\n")
-    print(" 0. Sair")
+    print(" 0. Voltar")
+    print(" ")
