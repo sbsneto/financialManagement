@@ -191,7 +191,7 @@ while True:
                         extratoCompleto[i].dataOperacao)
                     i += 1
                 # faz a execução do código parar até ser pressionada qualquer tecla
-                a = input("")
+                input()
                 limpa()
             elif(op3 == 2):
                 i = 0
@@ -205,7 +205,7 @@ while True:
                             extratoCompleto[i].dataOperacao)
                     i += 1
                 # faz a execução do código parar até ser pressionada qualquer tecla
-                a = input("")
+                input()
                 limpa()
             elif(op3 == 3):
                 i = 0
@@ -219,7 +219,7 @@ while True:
                             extratoCompleto[i].dataOperacao)
                     i += 1
                 # faz a execução do código parar ate ser pressionada qualquer tecla
-                a = input("")
+                input()
                 limpa()
             elif(op3 == 0):
                 limpa()
@@ -325,7 +325,7 @@ while True:
         print("O saldo atual é de: R$", contaCliente.getSaldo())
         print("Pressione qualquer tecla para continuar. ")
         # faz a execução do codigo parar até ser pressionada qualquer tecla
-        a = input("")
+        input()
         limpa()
     elif op == 6:
         limpa()
@@ -339,7 +339,7 @@ while True:
                 logs[i].id
             )
             i += 1
-        a = input("")
+        input()
         limpa()
     elif op == 0:
         break
